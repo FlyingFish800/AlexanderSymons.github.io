@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Alexander Symons&#39; Portfolio</title>
-    <link>https://AlexanderSymons.github.io/posts/</link>
+    <link>https://alexandersymons.github.io/posts/</link>
     <description>Recent content in Posts on Alexander Symons&#39; Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Mar 2023 20:33:09 -0800</lastBuildDate><atom:link href="https://AlexanderSymons.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Mar 2023 20:33:09 -0800</lastBuildDate><atom:link href="https://alexandersymons.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hackable Circuit Python Macropad Firmware</title>
-      <link>https://AlexanderSymons.github.io/posts/macropad/</link>
+      <link>https://alexandersymons.github.io/posts/macropad/</link>
       <pubDate>Mon, 06 Mar 2023 20:33:09 -0800</pubDate>
       
-      <guid>https://AlexanderSymons.github.io/posts/macropad/</guid>
+      <guid>https://alexandersymons.github.io/posts/macropad/</guid>
       <description></description>
     </item>
     
