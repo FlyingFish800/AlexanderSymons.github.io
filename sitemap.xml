@@ -2,17 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://FlyingFish800.github.io/</loc>
-    <lastmod>2023-03-06T20:33:09-08:00</lastmod>
+    <loc>http://FlyingFish800.github.io/</loc>
+    <lastmod>2023-03-07T12:11:42-08:00</lastmod>
   </url><url>
-    <loc>https://FlyingFish800.github.io/posts/macropad/</loc>
-    <lastmod>2023-03-06T20:33:09-08:00</lastmod>
+    <loc>http://FlyingFish800.github.io/macropad/first_life/</loc>
+    <lastmod>2023-03-07T12:11:42-08:00</lastmod>
   </url><url>
-    <loc>https://FlyingFish800.github.io/posts/</loc>
-    <lastmod>2023-03-06T20:33:09-08:00</lastmod>
+    <loc>http://FlyingFish800.github.io/macropad/</loc>
+    <lastmod>2023-03-07T12:11:42-08:00</lastmod>
   </url><url>
-    <loc>https://FlyingFish800.github.io/categories/</loc>
+    <loc>http://FlyingFish800.github.io/tags/hardware/</loc>
+    <lastmod>2023-03-06T21:20:18-08:00</lastmod>
   </url><url>
-    <loc>https://FlyingFish800.github.io/tags/</loc>
+    <loc>http://FlyingFish800.github.io/macropad/beginings/</loc>
+    <lastmod>2023-03-06T21:20:18-08:00</lastmod>
+  </url><url>
+    <loc>http://FlyingFish800.github.io/tags/macropad/</loc>
+    <lastmod>2023-03-06T21:20:18-08:00</lastmod>
+  </url><url>
+    <loc>http://FlyingFish800.github.io/tags/</loc>
+    <lastmod>2023-03-06T21:20:18-08:00</lastmod>
+  </url><url>
+    <loc>http://FlyingFish800.github.io/categories/</loc>
   </url>
 </urlset>

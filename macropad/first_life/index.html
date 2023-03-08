@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>First life | Alexander Symons&#39;s Portfolio</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+    <header>
+
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="http://FlyingFish800.github.io/">~/alexander symons&#39;s portfolio</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="/macropad/">~/macropads</a>
+      </li>
+      
+
+      
+
+    </ul>
+  </nav>
+</header>
+
+  </head>
+
+  <body>
+    <br/>
+
+<div class="article-meta">
+<h1><span class="title">First life</span></h1>
+
+<h2 class="date">2023/03/07</h2>
+<p class="terms">
+  
+  
+  
+  
+  
+</p>
+</div>
+
+
+<div class="content-wrapper">
+  <main>
+    <p>After working on the firmware for a while, I have got the macropad to work! Progress was pretty quick getting the lighting to work on the board. I had all the neopixels responding to keypresses according to the kdl config file after less than a week of work, and it was really motivating to see the description language I hacked together actually work suprisingly well.</p>
+<p>Afterwards I moved on to the most integral part of any macropad: the OLED display. I was quickly able to get text working on this display as Adafruit&rsquo;s ssd1306 library provides a very straight-forward function to print text. I wanted to add a way of rendering full images, which led me to look through the source code of all the framebuffer and ssd1306 drivers to create a simple pbm codec that could write to the framebuffer.</p>
+<p>From the basic event handler I used when testing on my laptop, it took a little but of reworking KDL to implement more complex key events for all the features the board had that I couldn&rsquo;t really test on my numpad, such as a display and neopixels. I settled on a sturcture where the key pressed and released methods of the &lsquo;interpreter&rsquo; returns lists for all the actions organized by their type. Currently they return a tuple structured as follows:
+<code>(changed_state, led_update, display_command, press_sequence, type_str, errors)</code> This allows KDL to be very portable, as the project using it need only to implement the set list of commands that the interpreter can return for a key event.</p>
+<p>Press_sequence and type_str commands were seperated to differentiate between two distinct forms of key pressing: Shortcuts and typing. Type_str types each stign of characyers one by one as you would expect, but press_sequence holds each key until the very last one is typed. This subtle distinction makes it possible to do shortcuts like <code>CTRL ALT t</code> to open a bash terminal in Ubuntu, which has been particulartly helpful for me.</p>
+<p>I had gotten to this point after several weeks of working on the firmware and starting a new quarter at college, and progress was going well. I just needed to implement the usb keyboard functionality, and it would be mostly complete. Instead, I started to notice the limitations of CircuitPython. Only a few debug pritn statements would slow down the code noticably, and I2C communication with the display was even more egregious, holding up the <strong>one</strong> core that CicruitPython would let me use. After a basic test of the SSD1306 in MicroPython made CircuitPython look ebarrasingly slow, I knew I wanted to switch. The only problem was that MicroPython doesn&rsquo;t have a USB HID library, so I would have to figure out how to write my own using C and either compile it into an mpy module, or compile it into MicroPython itself. I spent about 3 months working on this problem, which I will probably talk more about in another post, but it ended up not working out. I really want to revisit this tangent later, as I think if I took some time to familiarize myself with the TinyUSB library I used it would work.</p>
+<p>In the end, I came back to the CircuitPython based firmware, and finished implementing the keyboard functionality. This is where I am now. The firmware currenlty works, and I am working on polishing it now. The CircuitPython speed problems aren&rsquo;t really an issue, they macropad feels suprisingly snappy, but it still bugs me to have so much still on the table.</p>
+
+    <a href="/"> >> Home</a>
+  </main>
+</div>
+    <footer>
+      
+<script>
+(function() {
+  function center_el(tagName) {
+    var tags = document.getElementsByTagName(tagName), i, tag;
+    for (i = 0; i < tags.length; i++) {
+      tag = tags[i];
+      var parent = tag.parentElement;
+      
+      if (parent.childNodes.length === 1) {
+        
+        if (parent.nodeName === 'A') {
+          parent = parent.parentElement;
+          if (parent.childNodes.length != 1) continue;
+        }
+        if (parent.nodeName === 'P') parent.style.textAlign = 'center';
+      }
+    }
+  }
+  var tagNames = ['img', 'embed', 'object'];
+  for (var i = 0; i < tagNames.length; i++) {
+    center_el(tagNames[i]);
+  }
+})();
+</script>
+
+      
+    </footer>
+  </body>
+</html>
+
