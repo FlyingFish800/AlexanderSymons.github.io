@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Emulators on Alexander Symons&#39;s Portfolio</title>
-    <link>http://FlyingFish800.github.io/emulators/</link>
-    <description>Recent content in Emulators on Alexander Symons&#39;s Portfolio</description>
+    <title>software on Alexander Symons&#39;s Portfolio</title>
+    <link>http://FlyingFish800.github.io/tags/software/</link>
+    <description>Recent content in software on Alexander Symons&#39;s Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Mar 2023 21:12:17 -0800</lastBuildDate><atom:link href="http://FlyingFish800.github.io/emulators/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Mar 2023 21:12:17 -0800</lastBuildDate><atom:link href="http://FlyingFish800.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chip 8</title>
       <link>http://FlyingFish800.github.io/emulators/chip_8/</link>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Chip 8 | Alexander Symons&#39;s Portfolio</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+    <header>
+
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="http://FlyingFish800.github.io/">Home</a>
+      </li>
+      
+      
+      <li class="pull-left current">
+        <a href="/emulators/">emulators</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="/macropad/">macropads</a>
+      </li>
+      
+
+      
+
+    </ul>
+  </nav>
+</header>
+
+  </head>
+
+  <body>
+    <br/>
+
+<div class="article-meta">
+<h1><span class="title">Chip 8</span></h1>
+
+<h2 class="date">2023/03/08</h2>
+<p class="terms">
+  
+  
+  
+  
+  Tags: <a href="/tags/software">software</a> 
+  
+  
+</p>
+</div>
+
+
+<div class="content-wrapper">
+  <main>
+    <p>Link to the my Chip 8 toolchain repository: <br>
+<a href="https://github.com/FlyingFish800/Chip-8-Interpreter-Java">https://github.com/FlyingFish800/Chip-8-Interpreter-Java</a></p>
+<p>Back in 2021 I discovered the Chip 8 instruction set from a video on youtube of someone writing their own interpreter for it. It looked like a really cool project to spend some on my extra quarentine freetime on, so I went to the <a href="http://devernay.free.fr/hacks/chip8/C8TECH10.HTM#1.0">technical reference</a> they used and started to work on my own interpreter.</p>
+<p>Chip 8 is a great first introduction to computer systems and architecture, especially if you go down the route of writing your own interpreter. It utilizes concepts such as registers and individual instructions, and the though processes required to program a processor at such a low level. Writing a Chip 8 interpreter and assembler was a great introduction to low level computing, and writing a tron-like game with the limitations of the processor was also a really fun and rewarding experience.</p>
+<p>My interpreter uses seperate threads to handle the graphics and process CPU instructions, and the threads are kept in sync by a flag set by the processor every time it updates the screen. Input from the keypad is also handled by the graphics thread, and sent back to the CPU every time it requests the state of a key. An unexpected problem I had when testing before I demostrated it to my highschool CS class was filepath differences between the schools Windows computers and the Linux computers I had developed it on, which taught me a valuable lesson in writing platform independent code.</p>
+<p>The assembler was an even more interesting challenge for me as I had never done any project that needed to process and manipulate so much data before. I used a very simple approach of adding intermediate tokens to an ArrayList to communicate the information from the parser to the generator, which then converted it into an ArrayList of the machinecode bytes to be written to the output file. This simple assembler was suprisingly robust, especially with how accurate the label address determination turned out.</p>
+<p>When I had my interpreter and assembler working well enough, I wanted to make a simple snake like game using my own toolchain to experience what game development for this system was like. I immediately decided to add a &lsquo;feature&rsquo; where the trails behind the snake did not follow the head like it normally would, since drawing the head and redrawing the tail would more than double the amount of time it took to process one movement, which was not a luxury I could afford with a 60hz clock. One quirk of the Chip 8 system that is particularly useful is that drawing to the display occurs as an XOR opertation, where if any pixel was overriden bact to a 0 the flag register is set. This allowed me to check for collision in a single conditional skip instruction, only using one cycle to detect any form of collision with the snake, and only called a slower, more thorough collision detection subroutine in the downtime after a collision. The Chip&rsquo;s XOR draw command did create a bug where when the &lsquo;snake&rsquo; ran over a pellet a hole was left in its tail. I ended up turning this into another feature, as it created an interesting mechanic where you could avoid getting trapped in a box of your own tail (an issue compounded by the static tail) if you managed to pull off a pixel perfect input. Since it wasn&rsquo;t really snake anymore and the concept was similar to the light cycles in Tron, I decided to name the game light_cycle.asm. I would reccomend trying it out if you look at my code, it turned out really well.</p>
+
+    <a href="/"> >> Home</a>
+  </main>
+</div>
+    <footer>
+      
+<script>
+(function() {
+  function center_el(tagName) {
+    var tags = document.getElementsByTagName(tagName), i, tag;
+    for (i = 0; i < tags.length; i++) {
+      tag = tags[i];
+      var parent = tag.parentElement;
+      
+      if (parent.childNodes.length === 1) {
+        
+        if (parent.nodeName === 'A') {
+          parent = parent.parentElement;
+          if (parent.childNodes.length != 1) continue;
+        }
+        if (parent.nodeName === 'P') parent.style.textAlign = 'center';
+      }
+    }
+  }
+  var tagNames = ['img', 'embed', 'object'];
+  for (var i = 0; i < tagNames.length; i++) {
+    center_el(tagNames[i]);
+  }
+})();
+</script>
+
+      
+    </footer>
+  </body>
+</html>
+

@@ -13,8 +13,8 @@
       <pubDate>Tue, 07 Mar 2023 12:11:42 -0800</pubDate>
       
       <guid>http://FlyingFish800.github.io/macropad/firmware_v1/</guid>
-      <description>After working on the firmware for a while, I have got the macropad to work! Progress was pretty quick getting the lighting to work on the board. I had all the neopixels responding to keypresses according to the kdl config file after less than a week of work, and it was really motivating to see the description language I hacked together actually work suprisingly well.
-Afterwards I moved on to the most integral part of any macropad: the OLED display.</description>
+      <description>Link to Macropad firmware repository: https://github.com/2004Island/macropad-circuitpython
+After working on the firmware for a while, I have got the macropad to work! Progress was pretty quick getting the lighting to work on the board. I had all the neopixels responding to keypresses according to the kdl config file after less than a week of work, and it was really motivating to see the description language I hacked together actually work suprisingly well.</description>
     </item>
     
     <item>
@@ -23,8 +23,9 @@ Afterwards I moved on to the most integral part of any macropad: the OLED displa
       <pubDate>Mon, 06 Mar 2023 21:20:18 -0800</pubDate>
       
       <guid>http://FlyingFish800.github.io/macropad/kdl/</guid>
-      <description>Three or four months ago, my friend (Varun Sreedharan) approached me about writing firmware for a macropad he has created. It uses a custom PCB, a Raspberry Pi PICO, low profile switches, an oled I2C display, and a few 3D printed parts to create a suprisingly satisfying to use peice of hardware.
-I started by writing an parser for a language I named Keyboard Description Language, or KDL. Other macro pads and keyboards I&amp;rsquo;ve seen use clunky and repetitive methods like JSON or XML files for defining the purpose all the keys, and require them to be included in the firmware at compile time.</description>
+      <description>Link to Macropad firmware containing KDL: https://github.com/2004Island/macropad-circuitpython
+Three or four months ago, my friend (Varun Sreedharan) approached me about writing firmware for a macropad he has created. It uses a custom PCB, a Raspberry Pi PICO, low profile switches, an oled I2C display, and a few 3D printed parts to create a suprisingly satisfying to use peice of hardware.
+I started by writing an parser for a language I named Keyboard Description Language, or KDL.</description>
     </item>
     
   </channel>

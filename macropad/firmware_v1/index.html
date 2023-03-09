@@ -55,7 +55,7 @@
   
   
   
-  Tags: <a href="/tags/hardware">hardware</a> <a href="/tags/macropad">macropad</a> 
+  Tags: <a href="/tags/hardware">hardware</a> 
   
   
 </p>
@@ -64,7 +64,9 @@
 
 <div class="content-wrapper">
   <main>
-    <p>After working on the firmware for a while, I have got the macropad to work! Progress was pretty quick getting the lighting to work on the board. I had all the neopixels responding to keypresses according to the kdl config file after less than a week of work, and it was really motivating to see the description language I hacked together actually work suprisingly well.</p>
+    <p>Link to Macropad firmware repository:
+<a href="https://github.com/2004Island/macropad-circuitpython">https://github.com/2004Island/macropad-circuitpython</a></p>
+<p>After working on the firmware for a while, I have got the macropad to work! Progress was pretty quick getting the lighting to work on the board. I had all the neopixels responding to keypresses according to the kdl config file after less than a week of work, and it was really motivating to see the description language I hacked together actually work suprisingly well.</p>
 <p>Afterwards I moved on to the most integral part of any macropad: the OLED display. I was quickly able to get text working on this display as Adafruit&rsquo;s ssd1306 library provides a very straight-forward function to print text. I wanted to add a way of rendering full images, which led me to look through the source code of all the framebuffer and ssd1306 drivers to create a simple pbm codec that could write to the framebuffer.</p>
 <p>From the basic event handler I used when testing on my laptop, it took a little but of reworking KDL to implement more complex key events for all the features the board had that I couldn&rsquo;t really test on my numpad, such as a display and neopixels. I settled on a sturcture where the key pressed and released methods of the &lsquo;interpreter&rsquo; returns lists for all the actions organized by their type. Currently they return a tuple structured as follows:<br>
 <code>(changed_state, led_update, display_command, press_sequence, type_str, errors)</code><br>
