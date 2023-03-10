@@ -6,9 +6,18 @@
     <description>Recent content in Home on Alexander Symons&#39;s Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Mar 2023 21:12:17 -0800</lastBuildDate><atom:link href="http://FlyingFish800.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Mar 2023 23:53:46 -0800</lastBuildDate><atom:link href="http://FlyingFish800.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Chip 8</title>
+      <title>MicroPython Macropad Firmware Attempt</title>
+      <link>http://FlyingFish800.github.io/macropad/micropython_macropad/</link>
+      <pubDate>Thu, 09 Mar 2023 23:53:46 -0800</pubDate>
+      
+      <guid>http://FlyingFish800.github.io/macropad/micropython_macropad/</guid>
+      <description>While writing the macropad firmware in CircuitPython I ran into some of its limitations, especially in regaurds to speed and IO. While trying to find solutions I discovered that there was another embedded python project: MicroPython. A basic display test showed that MicroPython was significantly faster than CircuitPython when driving the I2C OLED on the macropad, as well as handling the logic when a key is released. The only problem with MicroPython was that it didn&amp;rsquo;t have a USB HID library to implement the core functionality of the macropad.</description>
+    </item>
+    
+    <item>
+      <title>Chip 8 Interpreter &amp; Assembler</title>
       <link>http://FlyingFish800.github.io/emulators/chip_8/</link>
       <pubDate>Wed, 08 Mar 2023 21:12:17 -0800</pubDate>
       
@@ -30,7 +39,7 @@ After watching videos by Ben Eater and SLU-4 on their custom 8-bit CPUs implemen
     </item>
     
     <item>
-      <title>Firmware V1.0 Done</title>
+      <title>Macropad Firmware V1.0</title>
       <link>http://FlyingFish800.github.io/macropad/firmware_v1/</link>
       <pubDate>Tue, 07 Mar 2023 12:11:42 -0800</pubDate>
       

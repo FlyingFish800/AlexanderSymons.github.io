@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Firmware V1.0 Done | Alexander Symons&#39;s Portfolio</title>
+    <title>Macropad Firmware V1.0 | Alexander Symons&#39;s Portfolio</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     
@@ -47,7 +47,7 @@
     <br/>
 
 <div class="article-meta">
-<h1><span class="title">Firmware V1.0 Done</span></h1>
+<h1><span class="title">Macropad Firmware V1.0</span></h1>
 
 <h2 class="date">2023/03/07</h2>
 <p class="terms">
@@ -73,7 +73,7 @@
 This allows KDL to be very portable, as the project using it need only to implement the set list of commands that the interpreter can return for a key event.</p>
 <p>Press_sequence and type_str commands were seperated to differentiate between two distinct forms of key pressing: Shortcuts and typing. Type_str types each stign of characyers one by one as you would expect, but press_sequence holds each key until the very last one is typed. This subtle distinction makes it possible to do shortcuts like <code>CTRL ALT t</code> to open a bash terminal in Ubuntu, which has been particulartly helpful for me.</p>
 <p>I had gotten to this point after several weeks of working on the firmware and starting a new quarter at college, and progress was going well. I just needed to implement the usb keyboard functionality, and it would be mostly complete. Instead, I started to notice the limitations of CircuitPython. Only a few debug pritn statements would slow down the code noticably, and I2C communication with the display was even more egregious, holding up the <strong>one</strong> core that CicruitPython would let me use. After a basic test of the SSD1306 in MicroPython made CircuitPython look ebarrasingly slow, I knew I wanted to switch. The only problem was that MicroPython doesn&rsquo;t have a USB HID library, so I would have to figure out how to write my own using C and either compile it into an mpy module, or compile it into MicroPython itself. I spent about 3 months working on this problem, which I will probably talk more about in another post, but it ended up not working out. I really want to revisit this tangent later, as I think if I took some time to familiarize myself with the TinyUSB library I used it would work.</p>
-<p>In the end, I came back to the CircuitPython based firmware, and finished implementing the keyboard functionality. This is where I am now. The firmware currenlty works, and I am working on polishing it now. The CircuitPython speed problems aren&rsquo;t really an issue, they macropad feels suprisingly snappy, but it still bugs me to have so much still on the table.</p>
+<p>In the end, I came back to the CircuitPython based firmware, and finished implementing the keyboard functionality. This is where I am now. The firmware currenlty works, and I am now working on polishing it. The CircuitPython speed problems aren&rsquo;t really an issue, the macropad feels suprisingly snappy, but it still bugs me to have so much performance still on the table.</p>
 
     <a href="/"> >> Home</a>
   </main>
