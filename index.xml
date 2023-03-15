@@ -6,14 +6,23 @@
     <description>Recent content in Home on Alexander Symons&#39;s Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Mar 2023 23:53:46 -0800</lastBuildDate><atom:link href="http://FlyingFish800.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Mar 2023 21:45:12 -0700</lastBuildDate><atom:link href="http://FlyingFish800.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>MicroPython Macropad Firmware Attempt</title>
+      <title>My first PCBs</title>
+      <link>http://FlyingFish800.github.io/pcbs/firstpcbs/</link>
+      <pubDate>Sun, 12 Mar 2023 21:45:12 -0700</pubDate>
+      
+      <guid>http://FlyingFish800.github.io/pcbs/firstpcbs/</guid>
+      <description>From my highschool&amp;rsquo;s maker club I got an old ATI Radeon HD3450 GPU from broken school computers that were being salvaged for their power supplies. I wanted to learn how the graphics card worked electrically, and try modifying it to understand the power delivery circuity worked. Sadly I didn&amp;rsquo;t get a chance to try modifying the circuit the time because this HD3450 only has an S-Video port and a DMS-59 port to output video, neither of which I have a cable for.</description>
+    </item>
+    
+    <item>
+      <title>MicroPython Macropad Firmware Post Mortem</title>
       <link>http://FlyingFish800.github.io/macropad/micropython_macropad/</link>
       <pubDate>Thu, 09 Mar 2023 23:53:46 -0800</pubDate>
       
       <guid>http://FlyingFish800.github.io/macropad/micropython_macropad/</guid>
-      <description>While writing the macropad firmware in CircuitPython I ran into some of its limitations, especially in regaurds to speed and IO. While trying to find solutions I discovered that there was another embedded python project: MicroPython. A basic display test showed that MicroPython was significantly faster than CircuitPython when driving the I2C OLED on the macropad, as well as handling the logic when a key is released. The only problem with MicroPython was that it didn&amp;rsquo;t have a USB HID library to implement the core functionality of the macropad.</description>
+      <description>While writing the macropad firmware in CircuitPython I ran into some of its limitations, especially in regards to speed and IO. While trying to find solutions I discovered that there was another embedded python project: MicroPython. A basic display test showed that MicroPython was significantly faster than CircuitPython when driving the I2C OLED on the macropad, as well as handling the logic when a key is released. The only problem with MicroPython was that it didn&amp;rsquo;t have a USB HID library to implement the core functionality of the macropad.</description>
     </item>
     
     <item>
@@ -23,7 +32,7 @@
       
       <guid>http://FlyingFish800.github.io/emulators/chip_8/</guid>
       <description>Link to the my Chip 8 toolchain repository: https://github.com/FlyingFish800/Chip-8-Interpreter-Java
-Back in 2021 I discovered the Chip 8 instruction set from a video on youtube of someone writing their own interpreter for it. It looked like a really cool project to spend some on my extra quarentine freetime on, so I went to the technical reference they used and started to work on my own interpreter.
+Back in 2021 I discovered the Chip 8 instruction set from a video on youtube of someone writing their own interpreter for it. It looked like a really cool project to spend some on my extra quarantine freetime on, so I went to the technical reference they used and started to work on my own interpreter.
 Chip 8 is a great first introduction to computer systems and architecture, especially if you go down the route of writing your own interpreter.</description>
     </item>
     
@@ -57,6 +66,15 @@ After working on the firmware for a while, I have got the macropad to work! Prog
       <description>Link to Macropad firmware containing KDL: https://github.com/2004Island/macropad-circuitpython
 Three or four months ago, my friend (Varun Sreedharan) approached me about writing firmware for a macropad he has created. It uses a custom PCB, a Raspberry Pi PICO, low profile switches, an oled I2C display, and a few 3D printed parts to create a suprisingly satisfying to use peice of hardware.
 I started by writing an parser for a language I named Keyboard Description Language, or KDL.</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>http://FlyingFish800.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://FlyingFish800.github.io/about/</guid>
+      <description>My name is Alexadner Symons, and I&amp;rsquo;m a Computer Engineering major and Electrical Engineering minor at UC Santa Cruz. I created this website to show off whatever projects I am currently working on, and share what I have learned while making them.</description>
     </item>
     
   </channel>

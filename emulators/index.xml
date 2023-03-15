@@ -14,7 +14,7 @@
       
       <guid>http://FlyingFish800.github.io/emulators/chip_8/</guid>
       <description>Link to the my Chip 8 toolchain repository: https://github.com/FlyingFish800/Chip-8-Interpreter-Java
-Back in 2021 I discovered the Chip 8 instruction set from a video on youtube of someone writing their own interpreter for it. It looked like a really cool project to spend some on my extra quarentine freetime on, so I went to the technical reference they used and started to work on my own interpreter.
+Back in 2021 I discovered the Chip 8 instruction set from a video on youtube of someone writing their own interpreter for it. It looked like a really cool project to spend some on my extra quarantine freetime on, so I went to the technical reference they used and started to work on my own interpreter.
 Chip 8 is a great first introduction to computer systems and architecture, especially if you go down the route of writing your own interpreter.</description>
     </item>
     

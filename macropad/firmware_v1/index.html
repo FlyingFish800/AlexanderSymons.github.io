@@ -34,6 +34,11 @@
         <a href="/macropad/">macropads</a>
       </li>
       
+      
+      <li class="pull-left ">
+        <a href="/pcbs/">pcbs</a>
+      </li>
+      
 
       
 
@@ -55,7 +60,7 @@
   
   
   
-  Tags: <a href="/tags/hardware">hardware</a> 
+  Tags: <a href="/tags/hardware">hardware</a> <a href="/tags/software">software</a> 
   
   
 </p>
@@ -72,7 +77,7 @@
 <code>(changed_state, led_update, display_command, press_sequence, type_str, errors)</code><br>
 This allows KDL to be very portable, as the project using it need only to implement the set list of commands that the interpreter can return for a key event.</p>
 <p>Press_sequence and type_str commands were seperated to differentiate between two distinct forms of key pressing: Shortcuts and typing. Type_str types each stign of characyers one by one as you would expect, but press_sequence holds each key until the very last one is typed. This subtle distinction makes it possible to do shortcuts like <code>CTRL ALT t</code> to open a bash terminal in Ubuntu, which has been particulartly helpful for me.</p>
-<p>I had gotten to this point after several weeks of working on the firmware and starting a new quarter at college, and progress was going well. I just needed to implement the usb keyboard functionality, and it would be mostly complete. Instead, I started to notice the limitations of CircuitPython. Only a few debug pritn statements would slow down the code noticably, and I2C communication with the display was even more egregious, holding up the <strong>one</strong> core that CicruitPython would let me use. After a basic test of the SSD1306 in MicroPython made CircuitPython look ebarrasingly slow, I knew I wanted to switch. The only problem was that MicroPython doesn&rsquo;t have a USB HID library, so I would have to figure out how to write my own using C and either compile it into an mpy module, or compile it into MicroPython itself. I spent about 3 months working on this problem, which I will probably talk more about in another post, but it ended up not working out. I really want to revisit this tangent later, as I think if I took some time to familiarize myself with the TinyUSB library I used it would work.</p>
+<p>I had gotten to this point after several weeks of working on the firmware and starting a new quarter at college, and progress was going well. I just needed to implement the usb keyboard functionality, and it would be mostly complete. Instead, I started to notice the limitations of CircuitPython. Only a few debug pritn statements would slow down the code noticably, and I2C communication with the display was even more egregious, holding up the <strong>one</strong> core that CicruitPython would let me use. After a basic test of the SSD1306 in MicroPython made CircuitPython look ebarrasingly slow, I knew I wanted to switch. The only problem was that MicroPython doesn&rsquo;t have a USB HID library, so I would have to figure out how to write my own using C and either compile it into an mpy module, or compile it into MicroPython itself. I spent about 3 months working on this problem, which I will probably talk more about in <a href="/macropad/micropython_macropad">another post</a>, but it ended up not working out. I really want to revisit this tangent later, as I think if I took some time to familiarize myself with the TinyUSB library I used it would work.</p>
 <p>In the end, I came back to the CircuitPython based firmware, and finished implementing the keyboard functionality. This is where I am now. The firmware currenlty works, and I am now working on polishing it. The CircuitPython speed problems aren&rsquo;t really an issue, the macropad feels suprisingly snappy, but it still bugs me to have so much performance still on the table.</p>
 
     <a href="/"> >> Home</a>

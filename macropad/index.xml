@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 09 Mar 2023 23:53:46 -0800</lastBuildDate><atom:link href="http://FlyingFish800.github.io/macropad/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>MicroPython Macropad Firmware Attempt</title>
+      <title>MicroPython Macropad Firmware Post Mortem</title>
       <link>http://FlyingFish800.github.io/macropad/micropython_macropad/</link>
       <pubDate>Thu, 09 Mar 2023 23:53:46 -0800</pubDate>
       
       <guid>http://FlyingFish800.github.io/macropad/micropython_macropad/</guid>
-      <description>While writing the macropad firmware in CircuitPython I ran into some of its limitations, especially in regaurds to speed and IO. While trying to find solutions I discovered that there was another embedded python project: MicroPython. A basic display test showed that MicroPython was significantly faster than CircuitPython when driving the I2C OLED on the macropad, as well as handling the logic when a key is released. The only problem with MicroPython was that it didn&amp;rsquo;t have a USB HID library to implement the core functionality of the macropad.</description>
+      <description>While writing the macropad firmware in CircuitPython I ran into some of its limitations, especially in regards to speed and IO. While trying to find solutions I discovered that there was another embedded python project: MicroPython. A basic display test showed that MicroPython was significantly faster than CircuitPython when driving the I2C OLED on the macropad, as well as handling the logic when a key is released. The only problem with MicroPython was that it didn&amp;rsquo;t have a USB HID library to implement the core functionality of the macropad.</description>
     </item>
     
     <item>

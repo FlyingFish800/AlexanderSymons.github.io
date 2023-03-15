@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>MicroPython Macropad Firmware Attempt | Alexander Symons&#39;s Portfolio</title>
+    <title>MicroPython Macropad Firmware Post Mortem | Alexander Symons&#39;s Portfolio</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     
@@ -34,6 +34,11 @@
         <a href="/macropad/">macropads</a>
       </li>
       
+      
+      <li class="pull-left ">
+        <a href="/pcbs/">pcbs</a>
+      </li>
+      
 
       
 
@@ -47,13 +52,15 @@
     <br/>
 
 <div class="article-meta">
-<h1><span class="title">MicroPython Macropad Firmware Attempt</span></h1>
+<h1><span class="title">MicroPython Macropad Firmware Post Mortem</span></h1>
 
 <h2 class="date">2023/03/09</h2>
 <p class="terms">
   
   
   
+  
+  Tags: <a href="/tags/software">software</a> 
   
   
 </p>
@@ -62,7 +69,12 @@
 
 <div class="content-wrapper">
   <main>
-    <p>While writing the macropad firmware in CircuitPython I ran into some of its limitations, especially in regaurds to speed and IO. While trying to find solutions I discovered that there was another embedded python project: MicroPython. A basic display test showed that MicroPython was significantly faster than CircuitPython when driving the I2C OLED on the macropad, as well as handling the logic when a key is released. The only problem with MicroPython was that it didn&rsquo;t have a USB HID library to implement the core functionality of the macropad. It did however provide a way to compile C code into a loadable file to be called from the python enviroment, or compile your own C code into a distrobution of the MicroPython interpreter. This sounded like a really cool oppertunity for me to write some low level C code using TinyUSB, and provide a feature sorely missing from this otherwise perfect python interpreter for the macropad.</p>
+    <p>While writing the macropad firmware in CircuitPython I ran into some of its limitations, especially in regards to speed and IO. While trying to find solutions I discovered that there was another embedded python project: MicroPython. A basic display test showed that MicroPython was significantly faster than CircuitPython when driving the I2C OLED on the macropad, as well as handling the logic when a key is released. The only problem with MicroPython was that it didn&rsquo;t have a USB HID library to implement the core functionality of the macropad. It did however provide a way to compile C code into a loadable file to be called from the python enviroment, or compile your own C code into a distrobution of the MicroPython interpreter. This sounded like a really cool oppertunity for me to write some low level C code using TinyUSB, and provide a feature sorely missing from this otherwise perfect python interpreter for the macropad project.</p>
+<p>My first attempt ustilized the mpy_ld tool to create a .mpy file containing the machine code, which is then loadable by micropython and exposes its functions to the interpreter. To do this I used the example makefile given on the micropython documentation website and copied their <a href="https://docs.micropython.org/en/latest/develop/natmod.html">example factorial code</a> to get a &lsquo;hello world&rsquo; module loading from C. When I first started working on it at the beginning of 2023, MicroPython v1.19 was a fairly new release which switched over to version 6 of the mpy format. At that time, I was unable to get then current builds of the MicroPython firmware to run on the Raspberry Pi Pico used in the macropad, and used an older v1.18 build of the firmware which had mpy versioning errors. The version of MicroPython I had cloned was v1.19, so only had the toold to build .mpy v6 modules. After building the firmware myself from the project I was able to get it to load on the Pi Pico, but still ran into weird mpy versioning errors.</p>
+<p>I came back to this project a few weeks later and found that there was a newer release of MicroPython, and when I retried to compile and load the factorial module it worked without any issues. Now I wanted to figure out how to get GCC and the mpy linker to include the TinyUSB lirbary in my modules so I had access to the USB hardware. There is no documentation on how to do this on their website and their examples don&rsquo;t link external libraries, so it took a while to figure out how to add my own GCC flags and figure out how to get all the source code linking properly. After wrestling the MicroPython build system into playing nice with TinyUSB I got an error: <code>LinkError: build/macro.o: .data non-empty</code>. I remembered reading in the MicroPython documentation that it is a known limitation that the .data section is not supported by the mpy linker. Not wanting to rewrite TinyUSB entirely with uninitialized global variables, I decided to switch to the other method of including C code in MicroPython: an External C module.</p>
+<p>Confusingly, External C module does not refer to the mpy modules but to C modules which are built into the firmware. This approach had no such limitations on the data segment, but takes a lot longer to compile and is less portable than the mpy file which functions like a normal python module. It took even longer to learn the new build system, and I switched from using a version of TinyUSB cloned from github to the one included in the MicroPython source code, but I was finally able to get a version of the firmware to compile successfully. The version of TinyUSB used in the MicroPython firmware is slightly different from the current version on github, and trying to get barebones examples I had scraped together from the github version of TinyUSB to initialize the hardware working in MicroPython required me to dig into the new sourcecode even more. Once the firmware was compiled and flashed onto the board I was able to load the module without any errors in MicroPython, and tried to add code to send a keypress to my laptop. This code didn&rsquo;t end up working.</p>
+<p>TinyUSB never marked the keyboard device as ready to use, and when I deleted that line (as I had seen some code examples omit it) it didn&rsquo;t change anything. At this point I made the decision that spending even more time on this firmware right now was not worth it when there was a nearlly fully finished version right there that would be more than good enough for now. I want to revist this project when I have more time to fully familiarize myself with TinyUSB, and understand it enough to know how the callback system works. It would also take at lot of time to undestand how the MicroPython source code itself uses callbacks and how they may interfere with my own code, so I will wait until my final week is over to start on that project.</p>
+<p>Despite being techincally unsuccessful this project has taught me a lot about build systems, integration, and how to read and understand real world production sourcecode. I will definitely be coming back to this project in the future to learn more, and complete it.</p>
 
     <a href="/"> >> Home</a>
   </main>

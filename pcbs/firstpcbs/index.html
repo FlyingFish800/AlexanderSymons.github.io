@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>My first PCBs | Alexander Symons&#39;s Portfolio</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+    <header>
+
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="http://FlyingFish800.github.io/">Home</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="/emulators/">emulators</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="/macropad/">macropads</a>
+      </li>
+      
+      
+      <li class="pull-left current">
+        <a href="/pcbs/">pcbs</a>
+      </li>
+      
+
+      
+
+    </ul>
+  </nav>
+</header>
+
+  </head>
+
+  <body>
+    <br/>
+
+<div class="article-meta">
+<h1><span class="title">My first PCBs</span></h1>
+
+<h2 class="date">2023/03/12</h2>
+<p class="terms">
+  
+  
+  
+  
+  Tags: <a href="/tags/hardware">hardware</a> 
+  
+  
+</p>
+</div>
+
+
+<div class="content-wrapper">
+  <main>
+    <p><img src="https://content.instructables.com/FM6/ALII/KAL2UP46/FM6ALIIKAL2UP46.jpg?auto=webp" alt="content">
+From my highschool&rsquo;s maker club I got an old ATI Radeon HD3450 GPU from broken school computers that were being salvaged for their power supplies. I wanted to learn how the graphics card worked electrically, and try modifying it to understand the power delivery circuity worked. Sadly I didn&rsquo;t get a chance to try modifying the circuit the time because this HD3450 only has an S-Video port and a DMS-59 port to output video, neither of which I have a cable for. Looking into the DMS-59 standard I found that it was a way for companies to include 2 VGA ports in one smaller port for small GPUs, and that electronically it had two VGA cables inside it. I thought this would a perfect oppertunity for me to learn how to design a PCB, so I could get this card working and experiment with it.</p>
+<p>My friend Varun reccomended EasyEDA for PCB development because of its ease of use and integration with JLC PCB and LCSC, so I used it to start working on my board. It ended up being a really simple design, as I essentially just made a break out board that I could mount on the hole previously used for the GPU&rsquo;s mounting bracket. My plan is to screw the VGA breakout PCB onto this hole and soldier wires to the corresponding pins on the back of the DMS-59 port, and then use female pin headers on the other end of the wire to plug into my PCB. Due to long shipping times from China, I have not recieved this board and tested it yet.</p>
+<p>Having sucessfully created my first PCB I thought I may as well make another for a future project, since they were going to take around a month to arrive anyways. I have a future project in mind where I would like to use a low pin count microcontroller and program it in bare-metal C, so I decided to make a development board for the ATTiny 414. The ATTiny 414 was perfect for this project because it was a small, cheap, low power microcontroller with an Analog Comparator, SPI hardware, and it can be programmed with a simple UDPI programmer. The main focus of this project was to get this chip on a development board so I could have access to all the pins, and program and power it with a USB cable.</p>
+<p>When looking for a USB to UDPI converter I stumbled across a really interesting project called <a href="https://github.com/mraardvark/pyupdi">pyudpi</a> which looked like the best solution. It uses a python utility to drive a USB to UART converter IC in such a way that it generates a UDPI signal, only adding an additional 1k ohm resistor to the circuitry. This is what allowed me to add the programmer into the board instead of relying on a bulky, expensive external UDPI programmer.</p>
+<p>I followed the reccomendations on the datasheet for the CH340N USB to UART chip I used, and added decoupling capacitors as it recomended. I calculated I needed a 360 ohm resistor for the blue LED I was using based on its data sheet, and an equation I found for calculating the required resistor value for a an LED: <code>(circuit voltage - LED voltage) / LED amperage</code>. Finally I found a guide for how to conenct the USB C port I had used to configure it for USB 2.0 mode for my project, and included a header to connect pin PA0 to the programmer only if a jumper was placed over a pin header. Routing the PCB was difficult due to the closely packed pins in the USB C header, but with a bit of creative routing I was able to make this PCB single sided.</p>
+
+    <a href="/"> >> Home</a>
+  </main>
+</div>
+    <footer>
+      
+<script>
+(function() {
+  function center_el(tagName) {
+    var tags = document.getElementsByTagName(tagName), i, tag;
+    for (i = 0; i < tags.length; i++) {
+      tag = tags[i];
+      var parent = tag.parentElement;
+      
+      if (parent.childNodes.length === 1) {
+        
+        if (parent.nodeName === 'A') {
+          parent = parent.parentElement;
+          if (parent.childNodes.length != 1) continue;
+        }
+        if (parent.nodeName === 'P') parent.style.textAlign = 'center';
+      }
+    }
+  }
+  var tagNames = ['img', 'embed', 'object'];
+  for (var i = 0; i < tagNames.length; i++) {
+    center_el(tagNames[i]);
+  }
+})();
+</script>
+
+      
+    </footer>
+  </body>
+</html>
+

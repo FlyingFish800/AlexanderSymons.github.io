@@ -6,7 +6,16 @@
     <description>Recent content in software on Alexander Symons&#39;s Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Mar 2023 21:12:17 -0800</lastBuildDate><atom:link href="http://FlyingFish800.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Mar 2023 23:53:46 -0800</lastBuildDate><atom:link href="http://FlyingFish800.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MicroPython Macropad Firmware Post Mortem</title>
+      <link>http://FlyingFish800.github.io/macropad/micropython_macropad/</link>
+      <pubDate>Thu, 09 Mar 2023 23:53:46 -0800</pubDate>
+      
+      <guid>http://FlyingFish800.github.io/macropad/micropython_macropad/</guid>
+      <description>While writing the macropad firmware in CircuitPython I ran into some of its limitations, especially in regards to speed and IO. While trying to find solutions I discovered that there was another embedded python project: MicroPython. A basic display test showed that MicroPython was significantly faster than CircuitPython when driving the I2C OLED on the macropad, as well as handling the logic when a key is released. The only problem with MicroPython was that it didn&amp;rsquo;t have a USB HID library to implement the core functionality of the macropad.</description>
+    </item>
+    
     <item>
       <title>Chip 8 Interpreter &amp; Assembler</title>
       <link>http://FlyingFish800.github.io/emulators/chip_8/</link>
@@ -14,7 +23,7 @@
       
       <guid>http://FlyingFish800.github.io/emulators/chip_8/</guid>
       <description>Link to the my Chip 8 toolchain repository: https://github.com/FlyingFish800/Chip-8-Interpreter-Java
-Back in 2021 I discovered the Chip 8 instruction set from a video on youtube of someone writing their own interpreter for it. It looked like a really cool project to spend some on my extra quarentine freetime on, so I went to the technical reference they used and started to work on my own interpreter.
+Back in 2021 I discovered the Chip 8 instruction set from a video on youtube of someone writing their own interpreter for it. It looked like a really cool project to spend some on my extra quarantine freetime on, so I went to the technical reference they used and started to work on my own interpreter.
 Chip 8 is a great first introduction to computer systems and architecture, especially if you go down the route of writing your own interpreter.</description>
     </item>
     
@@ -27,6 +36,16 @@ Chip 8 is a great first introduction to computer systems and architecture, espec
       <description>Link to my UMI 8 toolchain repository: https://github.com/FlyingFish800/UMI8
 After watching videos by Ben Eater and SLU-4 on their custom 8-bit CPUs implemented in 7400 series TTL logic chips, I became interested in CPU architecture design and decided to make my own. I started with designing the archecture and instruction set, and I set the following goals in mind:
  The hardware should be as simple as possible It must be achievable with TTL Logic gates It should have stack/subroutine operations  My first revision of this architecture was a 16 bit design using a full 16 bit data bus, a write only memory offset register to hack in a virtual address space, and a similarly hacky interrupt system.</description>
+    </item>
+    
+    <item>
+      <title>Macropad Firmware V1.0</title>
+      <link>http://FlyingFish800.github.io/macropad/firmware_v1/</link>
+      <pubDate>Tue, 07 Mar 2023 12:11:42 -0800</pubDate>
+      
+      <guid>http://FlyingFish800.github.io/macropad/firmware_v1/</guid>
+      <description>Link to Macropad firmware repository: https://github.com/2004Island/macropad-circuitpython
+After working on the firmware for a while, I have got the macropad to work! Progress was pretty quick getting the lighting to work on the board. I had all the neopixels responding to keypresses according to the kdl config file after less than a week of work, and it was really motivating to see the description language I hacked together actually work suprisingly well.</description>
     </item>
     
   </channel>
