@@ -33,7 +33,7 @@ After working on the firmware for a while, I have got the macropad to work! Prog
       
       <guid>http://FlyingFish800.github.io/macropad/kdl/</guid>
       <description>Link to Macropad firmware containing KDL: https://github.com/2004Island/macropad-circuitpython
-Three or four months ago, my friend (Varun Sreedharan) approached me about writing firmware for a macropad he has created. It uses a custom PCB, a Raspberry Pi PICO, low profile switches, an oled I2C display, and a few 3D printed parts to create a suprisingly satisfying to use peice of hardware.
+Three or four months ago, my friend (Varun Sreedharan) approached me about writing firmware for a macropad he has created. It uses a custom PCB, a Raspberry Pi PICO, low profile switches, an oled I2C display, and a few 3D printed parts to create a suprisingly satisfying to use piece of hardware.
 I started by writing an parser for a language I named Keyboard Description Language, or KDL.</description>
     </item>
     

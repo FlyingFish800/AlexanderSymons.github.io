@@ -8,13 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Mar 2023 23:53:59 -0700</lastBuildDate><atom:link href="http://FlyingFish800.github.io/emulators/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Chip8demo</title>
+      <title>Chip 8 Interpreter demo</title>
       <link>http://FlyingFish800.github.io/emulators/chip8demo/</link>
       <pubDate>Wed, 15 Mar 2023 23:53:59 -0700</pubDate>
       
       <guid>http://FlyingFish800.github.io/emulators/chip8demo/</guid>
-      <description>Chip 8 interpreter demo!
-Hellos!</description>
+      <description>Above is a demo of my light_cycle game running in my Chip 8 interpreter modified to work with the Cheerpj runtime. I had to modify the code to embed the game code as Cheerpj didn&amp;rsquo;t want to load the raw file on its own, and it didn&amp;rsquo;t support 2D arrays or function calls with expressions in them. I packaged this modified code into a jar which Cheerpj loads and runs in a javascript enviroment, providing all the operating system features which are required.</description>
     </item>
     
     <item>
@@ -24,6 +23,7 @@ Hellos!</description>
       
       <guid>http://FlyingFish800.github.io/emulators/chip_8/</guid>
       <description>Link to the my Chip 8 toolchain repository: https://github.com/FlyingFish800/Chip-8-Interpreter-Java
+Link to a demo
 Back in 2021 I discovered the Chip 8 instruction set from a video on youtube of someone writing their own interpreter for it. It looked like a really cool project to spend some on my extra quarantine freetime on, so I went to the technical reference they used and started to work on my own interpreter.
 Chip 8 is a great first introduction to computer systems and architecture, especially if you go down the route of writing your own interpreter.</description>
     </item>
