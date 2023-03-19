@@ -35,7 +35,7 @@ Chip 8 is a great first introduction to computer systems and architecture, espec
       
       <guid>http://FlyingFish800.github.io/emulators/homebrew_cpu/</guid>
       <description>Link to my UMI 8 toolchain repository: https://github.com/FlyingFish800/UMI8
-After watching videos by Ben Eater and SLU-4 on their custom 8-bit CPUs implemented in 7400 series TTL logic chips, I became interested in CPU architecture design and decided to make my own. I started with designing the archecture and instruction set, and I set the following goals in mind:
+After watching videos by Ben Eater and SLU-4 on their custom 8-bit CPUs implemented in 7400 series TTL logic chips, I became interested in CPU architecture design and decided to make my own. I started with designing the architecture and instruction set, and I set the following goals in mind:
  The hardware should be as simple as possible It must be achievable with TTL Logic gates It should have stack/subroutine operations  My first revision of this architecture was a 16 bit design using a full 16 bit data bus, a write only memory offset register to hack in a virtual address space, and a similarly hacky interrupt system.</description>
     </item>
     
@@ -46,7 +46,7 @@ After watching videos by Ben Eater and SLU-4 on their custom 8-bit CPUs implemen
       
       <guid>http://FlyingFish800.github.io/macropad/firmware_v1/</guid>
       <description>Link to Macropad firmware repository: https://github.com/2004Island/macropad-circuitpython
-After working on the firmware for a while, I have got the macropad to work! Progress was pretty quick getting the lighting to work on the board. I had all the neopixels responding to keypresses according to the kdl config file after less than a week of work, and it was really motivating to see the description language I hacked together actually work suprisingly well.</description>
+After working on the firmware for a while, I have got the macropad to work! Progress was pretty quick getting the lighting to work on the board. I had all the neopixels responding to keypresses according to the kdl config file after less than a week of work, and it was really motivating to see the description language I hacked together actually work surprisingly well.</description>
     </item>
     
   </channel>

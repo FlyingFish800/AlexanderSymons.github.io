@@ -13,7 +13,7 @@
       <pubDate>Wed, 15 Mar 2023 23:53:59 -0700</pubDate>
       
       <guid>http://FlyingFish800.github.io/emulators/chip8demo/</guid>
-      <description>Above is a demo of my light_cycle game running in my Chip 8 interpreter modified to work with the Cheerpj runtime. I had to modify the code to embed the game code as Cheerpj didn&amp;rsquo;t want to load the raw file on its own, and it didn&amp;rsquo;t support 2D arrays or function calls with expressions in them. I packaged this modified code into a jar which Cheerpj loads and runs in a javascript enviroment, providing all the operating system features which are required.</description>
+      <description>Above is a demo of my light_cycle game running in my Chip 8 interpreter modified to work with the Cheerpj runtime. I had to modify the code to embed the game code as Cheerpj didn&amp;rsquo;t want to load the raw file on its own, and it didn&amp;rsquo;t support 2D arrays or function calls with expressions in them. I packed this modified code into a jar which Cheerpj loads and runs in a javascript environment, providing all the operating system features which are required.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@ Chip 8 is a great first introduction to computer systems and architecture, espec
       
       <guid>http://FlyingFish800.github.io/emulators/homebrew_cpu/</guid>
       <description>Link to my UMI 8 toolchain repository: https://github.com/FlyingFish800/UMI8
-After watching videos by Ben Eater and SLU-4 on their custom 8-bit CPUs implemented in 7400 series TTL logic chips, I became interested in CPU architecture design and decided to make my own. I started with designing the archecture and instruction set, and I set the following goals in mind:
+After watching videos by Ben Eater and SLU-4 on their custom 8-bit CPUs implemented in 7400 series TTL logic chips, I became interested in CPU architecture design and decided to make my own. I started with designing the architecture and instruction set, and I set the following goals in mind:
  The hardware should be as simple as possible It must be achievable with TTL Logic gates It should have stack/subroutine operations  My first revision of this architecture was a 16 bit design using a full 16 bit data bus, a write only memory offset register to hack in a virtual address space, and a similarly hacky interrupt system.</description>
     </item>
     
