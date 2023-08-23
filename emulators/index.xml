@@ -13,7 +13,7 @@
       <pubDate>Sun, 23 Jul 2023 15:25:12 -0800</pubDate>
       
       <guid>http://FlyingFish800.github.io/emulators/homebrew_cpu_changes/</guid>
-      <description>During my winter quarter last year I took a class on the RISC-V architecture and learned about the concept of pseudo-instructions, essentially assembler macros that expand to multiple machine code isntructions that do one thing. I was inspired by this idea to implement it in my emulator and assembler since it would fix one of the main things I was unhappy with in the current design: the microsteps. The architecture previously had 32 microsteps which were completely unnecessary except for 2 instructions that used a few extra steps for stack operations.</description>
+      <description>During my winter quarter last year I took a class on the RISC-V architecture and learned about the concept of pseudo-instructions, essentially assembler macros that expand to multiple machine code instructions that do one thing. I was inspired by this idea to implement it in my emulator and assembler since it would fix one of the main things I was unhappy with in the current design: the microsteps. The architecture previously had 32 microsteps which were completely unnecessary except for 2 instructions that used a few extra steps for stack operations.</description>
     </item>
     
     <item>
