@@ -2,13 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://FlyingFish800.github.io/emulators/chip8demo/</loc>
-    <lastmod>2023-03-15T23:53:59-07:00</lastmod>
+    <loc>http://FlyingFish800.github.io/emulators/homebrew_cpu_changes/</loc>
+    <lastmod>2023-07-23T15:25:12-08:00</lastmod>
   </url><url>
     <loc>http://FlyingFish800.github.io/emulators/</loc>
-    <lastmod>2023-03-15T23:53:59-07:00</lastmod>
+    <lastmod>2023-07-23T15:25:12-08:00</lastmod>
   </url><url>
     <loc>http://FlyingFish800.github.io/</loc>
+    <lastmod>2023-07-23T15:25:12-08:00</lastmod>
+  </url><url>
+    <loc>http://FlyingFish800.github.io/tags/software/</loc>
+    <lastmod>2023-07-23T15:25:12-08:00</lastmod>
+  </url><url>
+    <loc>http://FlyingFish800.github.io/tags/</loc>
+    <lastmod>2023-07-23T15:25:12-08:00</lastmod>
+  </url><url>
+    <loc>http://FlyingFish800.github.io/emulators/chip8demo/</loc>
     <lastmod>2023-03-15T23:53:59-07:00</lastmod>
   </url><url>
     <loc>http://FlyingFish800.github.io/tags/hardware/</loc>
@@ -20,16 +29,10 @@
     <loc>http://FlyingFish800.github.io/pcbs/</loc>
     <lastmod>2023-03-12T21:45:12-07:00</lastmod>
   </url><url>
-    <loc>http://FlyingFish800.github.io/tags/</loc>
-    <lastmod>2023-03-12T21:45:12-07:00</lastmod>
-  </url><url>
     <loc>http://FlyingFish800.github.io/macropad/</loc>
     <lastmod>2023-03-09T23:53:46-08:00</lastmod>
   </url><url>
     <loc>http://FlyingFish800.github.io/macropad/micropython_macropad/</loc>
-    <lastmod>2023-03-09T23:53:46-08:00</lastmod>
-  </url><url>
-    <loc>http://FlyingFish800.github.io/tags/software/</loc>
     <lastmod>2023-03-09T23:53:46-08:00</lastmod>
   </url><url>
     <loc>http://FlyingFish800.github.io/emulators/chip_8/</loc>

@@ -6,7 +6,16 @@
     <description>Recent content in Home on Alexander Symons&#39;s Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Mar 2023 23:53:59 -0700</lastBuildDate><atom:link href="http://FlyingFish800.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jul 2023 15:25:12 -0800</lastBuildDate><atom:link href="http://FlyingFish800.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CPU Architecture changes</title>
+      <link>http://FlyingFish800.github.io/emulators/homebrew_cpu_changes/</link>
+      <pubDate>Sun, 23 Jul 2023 15:25:12 -0800</pubDate>
+      
+      <guid>http://FlyingFish800.github.io/emulators/homebrew_cpu_changes/</guid>
+      <description>During my winter quarter last year I took a class on the RISC-V architecture and learned about the concept of pseudo-instructions, essentially assembler macros that expand to multiple machine code isntructions that do one thing. I was inspired by this idea to implement it in my emulator and assembler since it would fix one of the main things I was unhappy with in the current design: the microsteps. The architecture previously had 32 microsteps which were completely unnecessary except for 2 instructions that used a few extra steps for stack operations.</description>
+    </item>
+    
     <item>
       <title>Chip 8 Interpreter demo</title>
       <link>http://FlyingFish800.github.io/emulators/chip8demo/</link>
